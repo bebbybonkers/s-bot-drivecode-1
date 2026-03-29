@@ -4,7 +4,7 @@
 #include "drivecode/wing.hpp"
 #include "drivecode/scoring.hpp"
 #include "drivecode/objects.hpp"
-#include "drivecode/trapdoor.hpp"
+#include "drivecode/hood.hpp"
 #include "lemlib/api.hpp"
 
 
@@ -87,8 +87,13 @@ void opcontrol() {
         updateIntake();
         updateLoader();
         updateWing();
-        updateScoring();
-        updateTrapdoor();
+        
+		updateScoring();
+		updateMidgoal();
+		updateLowgoal();
+
+        updateHood();
+
 		chassis.arcade(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y),
 		controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 
